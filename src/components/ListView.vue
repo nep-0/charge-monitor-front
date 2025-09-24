@@ -27,7 +27,10 @@
               :severity="getAvailableCount(station) > 0 ? 'success' : 'danger'"
               class="availability-tag"
             />
-            <span class="station-title" @click="togglePanel(station.title)">{{ station.title }}</span>
+            <div class="station-title-container">
+              <span class="station-title" @click="togglePanel(station.title)">{{ station.title }}</span>
+              <span class="station-location">{{ station.location }}</span>
+            </div>
           </div>
           <Button
             :icon="isFavorite(station.title) ? 'pi pi-heart-fill' : 'pi pi-heart'"
@@ -86,7 +89,8 @@ export default {
     filteredStations() {
       const filtered = this.searchQuery
         ? this.stations.filter(station =>
-            station.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+            station.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+            station.location.toLowerCase().includes(this.searchQuery.toLowerCase())
           )
         : this.stations;
 
@@ -105,10 +109,13 @@ export default {
         const response = await axios.get('https://gokwmudxqjkl.sealosgzg.site/outlets');
         const outlets = response.data;
         this.stations = Object.keys(stationMap).map(stationName => {
-          const stationOutlets = stationMap[stationName];
+          const stationData = stationMap[stationName];
           return {
             title: stationName,
-            outlets: stationOutlets.map(outletId => {
+            location: stationData.location,
+            lat: stationData.lat,
+            lon: stationData.lon,
+            outlets: stationData.outlets.map(outletId => {
               return {
                 id: outletId,
                 ...outlets[outletId]
@@ -216,6 +223,18 @@ export default {
 
 .station-title:hover {
   color: #007bff;
+}
+
+.station-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.station-location {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
 }
 
 .favorite-btn {
