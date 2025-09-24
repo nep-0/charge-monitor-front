@@ -1,5 +1,8 @@
 <template>
   <Card class="outlet-card" :class="{ 'available': !outlet.power && outlet.power !== undefined }">
+    <template #title v-if="outlet.name">
+      {{ outlet.name }}
+    </template>
     <template #content>
       <div class="outlet-content">
         <div class="power">{{ outlet.power === undefined ? '加载中' : (outlet.power || '可用') }}</div>
@@ -47,7 +50,7 @@ export default {
   font-size: 0.8rem;
   font-weight: normal;
   color: #6c757d;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

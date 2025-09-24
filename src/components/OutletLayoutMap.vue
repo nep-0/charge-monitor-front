@@ -10,17 +10,11 @@
       <div
         v-for="(position, index) in station.layout.outletPositions"
         :key="position.index"
-        class="outlet-marker"
+        class="outlet-dot"
         :class="getOutletClass(station.outlets[index])"
         :style="getMarkerStyle(position)"
         :title="getOutletTooltip(station.outlets[index], index + 1)"
       >
-        <div class="marker-content">
-          <div v-if="station.outlets[index] && station.outlets[index].power !== undefined" class="marker-info">
-            <div class="power-info">{{ getDisplayPower(station.outlets[index]) }}</div>
-            <div v-if="station.outlets[index].power" class="duration-info">{{ station.outlets[index].used_minutes }}min</div>
-          </div>
-        </div>
       </div>
     </div>
     <div class="layout-legend">
@@ -102,12 +96,14 @@ export default {
     },
     getOutletTooltip(outlet, number) {
       if (!outlet || outlet.power === undefined) {
-        return `插座 ${number}: 加载中...`;
+        const name = outlet?.name ? `${outlet.name}` : `${number}`;
+        return `插座 ${name}: 加载中...`;
       }
+      const name = outlet.name ? `${outlet.name}` : `${number}`;
       if (!outlet.power) {
-        return `插座 ${number}: 可用`;
+        return `插座 ${name}: 可用`;
       }
-      return `插座 ${number}: ${outlet.power}kW · ${outlet.used_minutes}分钟`;
+      return `插座 ${name}: ${outlet.power} · ${outlet.used_minutes}分钟`;
     },
     getDisplayPower(outlet) {
       if (!outlet || outlet.power === undefined) return '';
@@ -142,49 +138,47 @@ export default {
   object-fit: contain;
 }
 
-.outlet-marker {
+.outlet-dot {
   position: absolute;
-  min-width: 36px;
-  min-height: 36px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   cursor: pointer;
   transform: translate(-50%, -50%);
   border: 2px solid white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  padding: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.outlet-dot:hover {
+  transform: translate(-50%, -50%) scale(1.3);
+  z-index: 10;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+.outlet-dot.available {
+  background-color: #4caf50;
+}
+
+.outlet-dot.occupied {
+  background-color: #f44336;
+}
+
+.outlet-dot.loading {
+  background-color: #ff9800;
 }
 
 @media (max-width: 768px) {
-  .outlet-marker {
-    min-width: 28px;
-    min-height: 28px;
+  .outlet-dot {
+    width: 10px;
+    height: 10px;
     border-width: 1px;
-  }
-
-  .power-info {
-    font-size: 7px !important;
-  }
-
-  .duration-info {
-    font-size: 6px !important;
   }
 }
 
 @media (max-width: 480px) {
-  .outlet-marker {
-    min-width: 24px;
-    min-height: 24px;
-  }
-
-  .power-info {
-    font-size: 6px !important;
-  }
-
-  .duration-info {
-    font-size: 5px !important;
+  .outlet-dot {
+    width: 8px;
+    height: 8px;
   }
 
   .layout-legend {
@@ -196,58 +190,6 @@ export default {
   .legend-item {
     font-size: 0.7rem !important;
   }
-}
-
-.marker-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.marker-number {
-  font-size: 10px;
-  font-weight: bold;
-  color: white;
-  line-height: 1;
-}
-
-.marker-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1px;
-}
-
-.power-info {
-  font-size: 8px;
-  font-weight: bold;
-  color: white;
-  line-height: 1;
-}
-
-.duration-info {
-  font-size: 7px;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1;
-}
-
-.outlet-marker.available {
-  background-color: #4caf50;
-}
-
-.outlet-marker.occupied {
-  background-color: #f44336;
-}
-
-.outlet-marker.loading {
-  background-color: #ff9800;
-}
-
-.outlet-marker:hover {
-  transform: translate(-50%, -50%) scale(1.2);
-  z-index: 10;
 }
 
 .layout-legend {

@@ -129,9 +129,12 @@ export default {
             lat: stationData.lat,
             lon: stationData.lon,
             layout: stationData.layout,
-            outlets: stationData.outlets.map(outletId => {
+            outlets: stationData.outlets.map(outletConfig => {
+              const outletId = typeof outletConfig === 'string' ? outletConfig : outletConfig.id;
+              const outletName = typeof outletConfig === 'string' ? null : outletConfig.name;
               return {
                 id: outletId,
+                name: outletName,
                 ...outlets[outletId]
               };
             })
