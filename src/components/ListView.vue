@@ -3,7 +3,7 @@
     <Message severity="warn" class="info-banner" :closable="true">
       <div class="info-content">
         <i class="pi pi-exclamation-triangle"></i>
-        <span>布局图正在开发中，信息不准确。</span>
+        <span>布局图正在开发中，信息手动录入，可能不准确。</span>
       </div>
     </Message>
     <Message severity="info" class="fav-info-banner" :closable="true">

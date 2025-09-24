@@ -1,17 +1,23 @@
 import xueziLayout from '/src/assets/xuezi.webp';
+import xuezhi2Layout from '/src/assets/xuezhi2.webp';
 
 export const stationMap = {
-  '清水河学知苑1号充电桩': {
-    location: '学知苑二组团对面',
+  '学知苑二组团': {
+    location: '清水河学知苑1~4号充电桩',
     lat: 30.754285,
     lon: 103.932587,
     layout: {
-      imageUrl: '/layouts/8-outlets-2x4.png',
+      imageUrl: xuezhi2Layout,
       width: 400,
-      height: 200,
+      height: 300,
       outletPositions: [
-        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
-        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+        { index: 0, x: 64, y: 149 }, { index: 1, x: 64, y: 159 }, { index: 2, x: 64, y: 170 }, { index: 3, x: 64, y: 183 },
+        { index: 4, x: 64, y: 194 }, { index: 5, x: 64, y: 205 }, { index: 6, x: 64, y: 216 }, { index: 7, x: 64, y: 230 },
+        { index: 0, x: 256, y: 149 }, { index: 1, x: 256, y: 159 }, { index: 2, x: 256, y: 170 }, { index: 3, x: 256, y: 183 },
+        { index: 4, x: 256, y: 194 }, { index: 5, x: 256, y: 205 }, { index: 6, x: 256, y: 216 }, { index: 7, x: 256, y: 230 },
+        { index: 0, x: 332, y: 79 }, { index: 1, x: 332, y: 88 }, { index: 2, x: 332, y: 99 }, { index: 3, x: 332, y: 114 },
+        { index: 4, x: 332, y: 121 }, { index: 5, x: 332, y: 134 }, { index: 6, x: 332, y: 146 }, { index: 7, x: 332, y: 159 },
+        { index: 0, x: 153, y: 121 }, { index: 1, x: 153, y: 134 }, { index: 2, x: 153, y: 146 }, { index: 3, x: 153, y: 159 }
       ]
     },
     outlets: [
@@ -22,23 +28,7 @@ export const stationMap = {
       { id: "O211127011411999", name: "1-5" },
       { id: "O211127011412009", name: "1-6" },
       { id: "O211127011413019", name: "1-7" },
-      { id: "O211127011414029", name: "1-8" }
-    ]
-  },
-  '清水河学知苑2号充电桩': {
-    location: '学知苑二组团对面',
-    lat: 30.754285,
-    lon: 103.932587,
-    layout: {
-      imageUrl: '/layouts/8-outlets-2x4.png',
-      width: 400,
-      height: 200,
-      outletPositions: [
-        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
-        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
-      ]
-    },
-    outlets: [
+      { id: "O211127011414029", name: "1-8" },
       { id: "O2403252e2a0d3a8", name: "2-1" },
       { id: "O2403252e2a0e226", name: "2-2" },
       { id: "O2403252e2a0f1c3", name: "2-3" },
@@ -46,23 +36,7 @@ export const stationMap = {
       { id: "O2403252e2a11033", name: "2-5" },
       { id: "O2403252e2a120ae", name: "2-6" },
       { id: "O2403252e2a132c2", name: "2-7" },
-      { id: "O2403252e2a14241", name: "2-8" }
-    ]
-  },
-  '清水河学知苑3号充电桩': {
-    location: '学知苑二组团对面',
-    lat: 30.754285,
-    lon: 103.932587,
-    layout: {
-      imageUrl: '/layouts/8-outlets-2x4.png',
-      width: 400,
-      height: 200,
-      outletPositions: [
-        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
-        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
-      ]
-    },
-    outlets: [
+      { id: "O2403252e2a14241", name: "2-8" },
       { id: "O2403252e28211df", name: "3-1" },
       { id: "O2403252e28222de", name: "3-2" },
       { id: "O2403252e282314b", name: "3-3" },
@@ -70,29 +44,14 @@ export const stationMap = {
       { id: "O2403252e2825218", name: "3-5" },
       { id: "O2403252e28262aa", name: "3-6" },
       { id: "O2403252e2827259", name: "3-7" },
-      { id: "O2403252e282807d", name: "3-8" }
-    ]
-  },
-  '清水河学知苑4号充电桩': {
-    location: '学知苑二组团对面',
-    lat: 30.754285,
-    lon: 103.932587,
-    layout: {
-      imageUrl: '/layouts/4-outlets-1x4.png',
-      width: 400,
-      height: 100,
-      outletPositions: [
-        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 }
-      ]
-    },
-    outlets: [
+      { id: "O2403252e282807d", name: "3-8" },
       { id: "O230710283f0e025", name: "4-1" },
       { id: "O230710283f0f202", name: "4-2" },
       { id: "O230710283f1400d", name: "4-3" },
       { id: "O230710283f1513f", name: "4-4" }
     ]
   },
-  '学子餐厅东': {
+  '学子餐厅东侧': {
     location: '电子科大清水河校区学子餐厅1~5号电站',
     lat: 30.752637,
     lon: 103.934723,
@@ -156,7 +115,7 @@ export const stationMap = {
       { id: "O210520019387730", name: "5-8" }
     ]
   },
-  '学子餐厅西': {
+  '学子餐厅西侧': {
     location: '电子科大清水河校区学子餐厅6~9号充电桩',
     lat: 30.752637,
     lon: 103.934723,
