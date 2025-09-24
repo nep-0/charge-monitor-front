@@ -1,0 +1,25 @@
+{
+  "name": "charge-monitor-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@primeuix/themes": "^1.2.3",
+    "axios": "^1.12.2",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.3.9",
+    "vue": "^3.5.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.1.7"
+  }
+}
