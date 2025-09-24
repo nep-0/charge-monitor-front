@@ -3,6 +3,15 @@ export const stationMap = {
     location: '学知苑二组团对面',
     lat: 30.754285,
     lon: 103.932587,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O211127011407957",
       "O211127011408968",
@@ -18,6 +27,15 @@ export const stationMap = {
     location: '学知苑二组团对面',
     lat: 30.754285,
     lon: 103.932587,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O2403252e2a0d3a8",
       "O2403252e2a0e226",
@@ -33,6 +51,15 @@ export const stationMap = {
     location: '学知苑二组团对面',
     lat: 30.754285,
     lon: 103.932587,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O2403252e28211df",
       "O2403252e28222de",
@@ -48,6 +75,14 @@ export const stationMap = {
     location: '学知苑二组团对面',
     lat: 30.754285,
     lon: 103.932587,
+    layout: {
+      imageUrl: '/layouts/4-outlets-1x4.png',
+      width: 400,
+      height: 100,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 }
+      ]
+    },
     outlets: [
       "O230710283f0e025",
       "O230710283f0f202",
@@ -59,6 +94,15 @@ export const stationMap = {
     location: '学子餐厅',
     lat: 30.752637,
     lon: 103.934723,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O201222013853574",
       "O201222013854585",
@@ -74,6 +118,15 @@ export const stationMap = {
     location: '学子餐厅',
     lat: 30.752637,
     lon: 103.934723,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O200604010216599",
       "O200604010217610",
@@ -89,6 +142,15 @@ export const stationMap = {
     location: '学子餐厅',
     lat: 30.752637,
     lon: 103.934723,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O2403252e2ac1369",
       "O2403252e2ac216e",
@@ -104,6 +166,15 @@ export const stationMap = {
     location: '学子餐厅',
     lat: 30.752637,
     lon: 103.934723,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O201120012018307",
       "O201120012019317",
@@ -119,6 +190,15 @@ export const stationMap = {
     location: '学子餐厅',
     lat: 30.752637,
     lon: 103.934723,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O210520019380658",
       "O210520019381669",
@@ -134,6 +214,15 @@ export const stationMap = {
     location: '学子餐厅',
     lat: 30.752637,
     lon: 103.934723,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O210701014923058",
       "O210701014924080",
@@ -149,6 +238,15 @@ export const stationMap = {
     location: '学子餐厅',
     lat: 30.752637,
     lon: 103.934723,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O210702016467798",
       "O210702016468808",
@@ -164,6 +262,15 @@ export const stationMap = {
     location: '学子餐厅',
     lat: 30.752637,
     lon: 103.934723,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O210702016485802",
       "O210702016486812",
@@ -179,6 +286,15 @@ export const stationMap = {
     location: '学子餐厅',
     lat: 30.752637,
     lon: 103.934723,
+    layout: {
+      imageUrl: '/layouts/8-outlets-2x4.png',
+      width: 400,
+      height: 200,
+      outletPositions: [
+        { index: 0, x: 50, y: 50 }, { index: 1, x: 125, y: 50 }, { index: 2, x: 200, y: 50 }, { index: 3, x: 275, y: 50 },
+        { index: 4, x: 50, y: 150 }, { index: 5, x: 125, y: 150 }, { index: 6, x: 200, y: 150 }, { index: 7, x: 275, y: 150 }
+      ]
+    },
     outlets: [
       "O210520019362665",
       "O210520019363675",

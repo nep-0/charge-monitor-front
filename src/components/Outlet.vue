@@ -30,6 +30,7 @@ export default {
 .outlet-card {
   width: 120px;
   text-align: center;
+  min-width: 100px;
 }
 
 .outlet-content .power {
@@ -59,5 +60,74 @@ export default {
 .available {
   background-color: #e8f5e9;
   border-color: #4caf50;
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+  .outlet-card {
+    width: 100px;
+    min-width: 85px;
+  }
+
+  .outlet-content .power {
+    font-size: 1.2rem;
+  }
+
+  .outlet-content .duration {
+    font-size: 0.8rem;
+  }
+
+  :deep(.p-card-body) {
+    padding: 0.75rem;
+  }
+
+  :deep(.p-card-title) {
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .outlet-card {
+    width: 85px;
+    min-width: 75px;
+  }
+
+  .outlet-content .power {
+    font-size: 1rem;
+  }
+
+  .outlet-content .duration {
+    font-size: 0.7rem;
+  }
+
+  :deep(.p-card-body) {
+    padding: 0.5rem;
+  }
+
+  :deep(.p-card-title) {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 360px) {
+  .outlet-card {
+    width: 75px;
+    min-width: 65px;
+  }
+
+  .outlet-content .power {
+    font-size: 0.9rem;
+  }
+
+  .outlet-content .duration {
+    font-size: 0.65rem;
+  }
+
+  :deep(.p-card-body) {
+    padding: 0.4rem;
+  }
 }
 </style>

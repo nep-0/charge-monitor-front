@@ -1,5 +1,11 @@
 <template>
   <div class="list-view">
+    <Message severity="warn" class="info-banner" :closable="true">
+      <div class="info-content">
+        <i class="pi pi-exclamation-triangle"></i>
+        <span>布局图正在开发中，信息不准确。</span>
+      </div>
+    </Message>
     <Message severity="info" class="fav-info-banner" :closable="true">
       <div class="fav-info-content">
         <i class="pi pi-heart-fill"></i>
@@ -41,12 +47,17 @@
           />
         </div>
       </template>
-      <div class="outlet-grid">
-        <Outlet
-          v-for="outlet in station.outlets"
-          :key="outlet.id"
-          :outlet="outlet"
-        />
+      <div class="station-content">
+        <div v-if="station.layout" class="layout-section">
+          <OutletLayoutMap :station="station" />
+        </div>
+        <div class="outlet-grid">
+          <Outlet
+            v-for="outlet in station.outlets"
+            :key="outlet.id"
+            :outlet="outlet"
+          />
+        </div>
       </div>
     </Panel>
   </div>
@@ -62,6 +73,7 @@ import InputText from 'primevue/inputtext';
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import Outlet from './Outlet.vue';
+import OutletLayoutMap from './OutletLayoutMap.vue';
 import { stationMap } from '../station-map.js';
 
 export default {
@@ -74,7 +86,8 @@ export default {
     InputText,
     IconField,
     InputIcon,
-    Outlet
+    Outlet,
+    OutletLayoutMap
   },
   data() {
     return {
@@ -115,6 +128,7 @@ export default {
             location: stationData.location,
             lat: stationData.lat,
             lon: stationData.lon,
+            layout: stationData.layout,
             outlets: stationData.outlets.map(outletId => {
               return {
                 id: outletId,
@@ -173,6 +187,20 @@ export default {
   width: 85%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.info-banner {
+  margin-bottom: 1rem;
+}
+
+.info-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-content i {
+  color: #e73c3c;
 }
 
 .fav-info-banner {
@@ -252,11 +280,63 @@ export default {
   background-color: transparent !important;
 }
 
+.station-content {
+  padding: 1rem 0;
+}
+
+.layout-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e1e5e9;
+}
+
 .outlet-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+/* Tablet screens */
+@media (max-width: 768px) {
+  .outlet-grid {
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .station-content {
+    padding: 0.75rem 0;
+  }
+
+  .layout-section {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .outlet-grid {
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .station-content {
+    padding: 0.5rem 0;
+  }
+
+  .layout-section {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .outlet-grid {
+    gap: 0.4rem;
+  }
 }
 
 :deep(.p-panel-header) {
