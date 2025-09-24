@@ -1,5 +1,6 @@
 import xueziLayout from '/src/assets/xuezi.webp';
 import xuezhi2Layout from '/src/assets/xuezhi2.webp';
+import shuofeng4Layout from '/src/assets/shuofeng4.webp';
 
 export const stationMap = {
   '学知苑二组团': {
@@ -167,6 +168,50 @@ export const stationMap = {
       { id: "O210520019367713", name: "9-6" },
       { id: "O210520019368723", name: "9-7" },
       { id: "O210520019369733", name: "9-8" }
+    ]
+  },
+  '硕丰四组团': {
+    location: '硕丰四组团1~3号充电桩',
+    lat: 30.755002,
+    lon: 103.934905,
+    layout: {
+      imageUrl: shuofeng4Layout,
+      width: 165,
+      height: 284,
+      outletPositions: [
+        { index: 0, x: 134, y: 267 }, { index: 1, x: 125, y: 256 }, { index: 2, x: 125, y: 244 }, { index: 3, x: 121, y: 235 },
+        { index: 4, x: 118, y: 224 }, { index: 5, x: 114, y: 215 }, { index: 6, x: 109, y: 204 }, { index: 7, x: 104, y: 193 },
+        { index: 0, x: 101, y: 179 }, { index: 1, x: 95, y: 169 }, { index: 2, x: 92, y: 159 }, { index: 3, x: 86, y: 147 },
+        { index: 4, x: 84, y: 138 }, { index: 5, x: 80, y: 126 }, { index: 6, x: 75, y: 116 }, { index: 7, x: 70, y: 105 },
+        { index: 0, x: 66, y: 94 }, { index: 1, x: 61, y: 84 }, { index: 2, x: 57, y: 73 }, { index: 3, x: 51, y: 61 },
+        { index: 4, x: 49, y: 52 }, { index: 5, x: 44, y: 41 }, { index: 6, x: 39, y: 28 }, { index: 7, x: 36, y: 20 },
+      ]
+    },
+    outlets: [
+      {"id":"O221019020295174", "name":"1-1"},
+      {"id":"O221019020296177", "name":"1-2"},
+      {"id":"O221019020297179", "name":"1-3"},
+      {"id":"O221019020298181", "name":"1-4"},
+      {"id":"O221019020299183", "name":"1-5"},
+      {"id":"O221019020300185", "name":"1-6"},
+      {"id":"O221019020301187", "name":"1-7"},
+      {"id":"O221019020302189", "name":"1-8"},
+      {"id":"O221026022351480", "name":"2-1"},
+      {"id":"O221026022352482", "name":"2-2"},
+      {"id":"O221026022353485", "name":"2-3"},
+      {"id":"O221026022354487", "name":"2-4"},
+      {"id":"O221026022355489", "name":"2-5"},
+      {"id":"O221026022356491", "name":"2-6"},
+      {"id":"O221026022357494", "name":"2-7"},
+      {"id":"O221026022358496", "name":"2-8"},
+      {"id":"O210705011501290", "name":"3-1"},
+      {"id":"O210705011502300", "name":"3-2"},
+      {"id":"O210705011503311", "name":"3-3"},
+      {"id":"O210705011504322", "name":"3-4"},
+      {"id":"O210705011505332", "name":"3-5"},
+      {"id":"O210705011506343", "name":"3-6"},
+      {"id":"O210705011507353", "name":"3-7"},
+      {"id":"O210705011508364", "name":"3-8"}
     ]
   },
 };
