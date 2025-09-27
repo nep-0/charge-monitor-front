@@ -38,13 +38,23 @@
               <span class="station-location">{{ station.location }}</span>
             </div>
           </div>
-          <Button
-            :icon="isFavorite(station.title) ? 'pi pi-heart-fill' : 'pi pi-heart'"
-            class="p-button-text favorite-btn"
-            :class="{ 'favorite-active': isFavorite(station.title) }"
-            @click="toggleFavorite(station.title)"
-            size="large"
-          />
+          <div class="station-actions">
+            <Button
+              icon="pi pi-map-marker"
+              class="p-button-text nav-btn"
+              @click="openNavigation(station)"
+              size="large"
+              title="导航"
+            />
+            <Button
+              :icon="isFavorite(station.title) ? 'pi pi-heart-fill' : 'pi pi-heart'"
+              class="p-button-text favorite-btn"
+              :class="{ 'favorite-active': isFavorite(station.title) }"
+              @click="toggleFavorite(station.title)"
+              size="large"
+              title="收藏"
+            />
+          </div>
         </div>
       </template>
       <div class="station-content">
@@ -172,6 +182,11 @@ export default {
       if (panelIndex >= 0 && this.$refs.panels && this.$refs.panels[panelIndex]) {
         this.$refs.panels[panelIndex].toggle();
       }
+    },
+    openNavigation(station) {
+      // const url = `https://www.amap.com/regeo?lng=${station.lon}&lat=${station.lat}&name=${encodeURIComponent(station.title)}`;
+      const url = `https://uri.amap.com/marker?position=${station.lon},${station.lat}&name=${encodeURIComponent(station.title)}`;
+      window.open(url, '_blank');
     }
   },
   created() {
@@ -268,9 +283,24 @@ export default {
   margin-top: 0.25rem;
 }
 
+.station-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.nav-btn {
+  padding: 0.25rem !important;
+  color: #6c757d !important;
+}
+
+.nav-btn:hover {
+  color: #007bff !important;
+  background-color: transparent !important;
+}
+
 .favorite-btn {
   padding: 0.25rem !important;
-  margin-left: 0.5rem;
   color: #6c757d !important;
 }
 
