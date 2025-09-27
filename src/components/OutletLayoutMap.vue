@@ -47,43 +47,99 @@ export default {
     return {
       scale: 1,
       containerWidth: 0,
-      containerHeight: 0
+      containerHeight: 0,
+      imageLoaded: false,
+      updateInterval: null
     }
   },
   computed: {
     containerStyle() {
-      const maxWidth = Math.min(this.station.layout.width, window.innerWidth - 80);
-      this.scale = maxWidth / this.station.layout.width;
+      const parentElement = this.$el?.parentElement;
+      const availableWidth = parentElement ?
+        Math.min(parentElement.offsetWidth - 40, 600) :
+        Math.min(window.innerWidth - 80, 600);
 
-      this.containerWidth = this.station.layout.width * this.scale;
-      this.containerHeight = this.station.layout.height * this.scale;
+      const originalWidth = this.station.layout.width;
+
+      if (originalWidth <= availableWidth) {
+        this.scale = 1;
+        this.containerWidth = originalWidth;
+        this.containerHeight = this.station.layout.height;
+      } else {
+        this.scale = availableWidth / originalWidth;
+        this.containerWidth = availableWidth;
+        this.containerHeight = this.station.layout.height * this.scale;
+      }
 
       return {
         width: this.containerWidth + 'px',
-        height: this.containerHeight + 'px',
-        transform: `scale(${this.scale})`,
-        transformOrigin: 'top left'
+        height: this.containerHeight + 'px'
       };
     }
   },
+  watch: {
+    station: {
+      handler() {
+        // Only recalculate when station data changes
+        this.updateScale();
+      }
+    }
+  },
   mounted() {
+    console.log('OutletLayoutMap mounted');
+    this.imageLoaded = true;
     this.updateScale();
     window.addEventListener('resize', this.updateScale);
+
+    // Update scale every second
+    this.updateInterval = setInterval(() => {
+      this.updateScale();
+    }, 1000);
   },
   beforeDestroy() {
+    console.log('OutletLayoutMap beforeDestroy, clearing interval:', this.updateInterval);
     window.removeEventListener('resize', this.updateScale);
+    if (this.updateInterval) {
+      clearInterval(this.updateInterval);
+    }
   },
   methods: {
     updateScale() {
+      // Force recalculation of container dimensions
+      if (this.$el) {
+        const parentElement = this.$el.parentElement;
+        const availableWidth = parentElement ?
+          Math.min(parentElement.offsetWidth - 40, 600) :
+          Math.min(window.innerWidth - 80, 600);
+
+        const originalWidth = this.station.layout.width;
+
+        if (originalWidth <= availableWidth) {
+          this.scale = 1;
+          this.containerWidth = originalWidth;
+          this.containerHeight = this.station.layout.height;
+        } else {
+          this.scale = availableWidth / originalWidth;
+          this.containerWidth = availableWidth;
+          this.containerHeight = this.station.layout.height * this.scale;
+        }
+      }
+
       this.$forceUpdate();
     },
     onImageLoad() {
-      this.$forceUpdate();
+      this.imageLoaded = true;
+      this.$nextTick(() => {
+        this.updateScale();
+      });
     },
     getMarkerStyle(position) {
+      const dotSize = Math.max(8, 12 * this.scale); // Minimum 8px, scales with container
       return {
         left: (position.x * this.scale) + 'px',
-        top: (position.y * this.scale) + 'px'
+        top: (position.y * this.scale) + 'px',
+        width: dotSize + 'px',
+        height: dotSize + 'px'
       };
     },
     getOutletClass(outlet) {
@@ -136,6 +192,7 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: top left;
 }
 
 .outlet-dot {
